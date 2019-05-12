@@ -48,9 +48,10 @@ script:
      - ./points_loop
 notifications:
   email:
-    - shitikov.om@phystech.edu
-#testers' emails.
-    - Shitikov-8b@yandex.ru
+    recepients:
+        - shitikov.om@phystech.edu
+        #testers' emails.
+        - Shitikov-8b@yandex.ru
     on_success: always
     on_failure: always
 
