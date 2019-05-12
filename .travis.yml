@@ -24,7 +24,6 @@ matrix:
          sources: &precise_latest_boost_sources
            - ubuntu-toolchain-r-test
            - llvm-toolchain-precise-3.7
-    
 before_install:
     - export CMAKE_OPTIONS=${CMAKE_OPTIONS}" "${ENV_CMAKE_OPTIONS}
     - export CXX_FLAGS=${CXX_FLAGS}" "${ENV_CXX_FLAGS}
@@ -44,6 +43,12 @@ install:
         export PATH=${DEPS_DIR}/cmake/bin:${PATH}
       fi
 script:
-     - cmake .
+     - cmake . DRUN_TESTS=ON
      - make
+notifications:
+  slack:
+    template:
+    - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} in PR <%{pull_request_url}|#%{pull_request_number}> by %{author} %{result} in %{duration}. Please try to use it and write us what do you think."
+  email:
+    - Shitikov-8b@yandex.ru
 

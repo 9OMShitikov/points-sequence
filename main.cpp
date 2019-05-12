@@ -3,6 +3,7 @@
 #include "points_sequence.h"
 
 int main() {
+    /*running program*/
     points_sequence seq;
     seq.read_points();
     seq.minimize_length();
