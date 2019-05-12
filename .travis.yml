@@ -43,7 +43,7 @@ install:
         export PATH=${DEPS_DIR}/cmake/bin:${PATH}
       fi
 script:
-     - cmake . DRUN_TESTS=ON
+     - cmake -DRUN_TESTS=ON .
      - make
 notifications:
   slack:
