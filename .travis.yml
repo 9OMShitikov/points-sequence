@@ -45,6 +45,7 @@ install:
 script:
      - cmake -DRUN_TESTS=ON .
      - make
+     - ./points_loop
 notifications:
   slack:
     template:
